@@ -1,0 +1,20 @@
+seed: 0
+mixed_precision: false
+base_lr: 4.0e-4
+
+nr_gpus: 8
+batch_size_single: 2
+n_total_epoch: 600
+minibatch_per_epoch: 500
+
+loadmodel: ~
+log_dir: "./train_log"
+model_save_freq_epoch: 1
+
+max_disp: 256
+image_width: 512
+image_height: 384
+training_data_path: "./stereo_trainset/crestereo"
+
+log_level: "logging.INFO"
+
