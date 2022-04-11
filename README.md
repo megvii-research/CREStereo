@@ -67,10 +67,15 @@ CUDA Version: 10.1, Python Version: 3.6.9
  - Pillow  v8.4.0
  - tensorboardX  v2.1
 
- ```bash
+```bash
 python3 -m pip install -r requirements.txt
 ```
 
+We also provide docker to run the code quickly:
+```bash
+docker run --gpus all -it -v /tmp:/tmp ylmegvii/crestereo
+shotwell /tmp/disparity.png
+```
 
  ## Inference
 
