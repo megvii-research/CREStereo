@@ -135,7 +135,7 @@ class AGCL:
             offsets = F.transpose(
                 F.reshape(F.stack((x_grid, y_grid)), (2, -1)), (1, 0)
             )  # [search_num, 2]
-            offsets = F.repeat(F.expand_dims(offsets, (0, 2, 3)), N, axis=0)
+            offsets = F.expand_dims(offsets, (0, 2, 3))
             offsets = offsets + extra_offset
 
             coords = self.coords + flow  # [N, 2, H, W]
@@ -149,10 +149,8 @@ class AGCL:
             right_feature = F.reshape(
                 right_feature, (N, C, -1, H, W)
             )  # [N, C, search_num, H, W]
-            left_feature = F.repeat(
-                F.expand_dims(left_feature, 2), right_feature.shape[2], axis=2
-            )
 
+            left_feature = F.expand_dims(left_feature, 2)
             corr = F.mean(left_feature * right_feature, axis=1)
 
             corrs.append(corr)
