@@ -2,7 +2,7 @@ import numpy as np
 import megengine as mge
 import megengine.module as M
 import megengine.functional as F
-from .utils.utils import bilinear_sampler, coords_grid, manual_pad
+from .utils.utils import bilinear_sampler, coords_grid
 
 
 class AGCL:
@@ -36,17 +36,17 @@ class AGCL:
         di_y, di_x = dilate[0], dilate[1]
         pady, padx = psize[0] // 2 * di_y, psize[1] // 2 * di_x
 
-        right_pad = manual_pad(right_feature, pady, padx)
+        right_pad = F.pad(right_feature, pad_witdth=(
+            (0, 0), (0, 0), (pady, pady), (padx, padx)), mode="replicate")
 
-        corr_list = []
-        for h in range(0, pady * 2 + 1, di_y):
-            for w in range(0, padx * 2 + 1, di_x):
-                right_crop = right_pad[:, :, h : h + H, w : w + W]
-                assert right_crop.shape == left_feature.shape
-                corr = F.mean(left_feature * right_crop, axis=1, keepdims=True)
-                corr_list.append(corr)
+        right_slid = F.sliding_window(
+            right_pad, kernel_size=(H, W), stride=(di_y, di_x))
+        right_slid = right_slid.reshape(N, C, -1, H, W)
+        right_slid = F.transpose(right_slid, (0, 2, 1, 3, 4))
+        right_slid = right_slid.reshape(-1, C, H, W)
 
-        corr_final = F.concat(corr_list, axis=1)
+        corr_mean = F.mean(left_feature * right_slid, axis=1, keepdims=True)
+        corr_final = corr_mean.reshape(1, -1, H, W)
 
         return corr_final
 
