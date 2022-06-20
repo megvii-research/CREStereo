@@ -117,12 +117,11 @@ We thank all the authors for their awesome repos.
 If you find the code or datasets helpful in your research, please cite:
 
 ```
-@misc{Li2022PracticalSM,
-      title={Practical Stereo Matching via Cascaded Recurrent Network with Adaptive Correlation},
-      author={Jiankun Li and Peisen Wang and Pengfei Xiong and Tao Cai and Ziwei Yan and Lei Yang and Jiangyu Liu and Haoqiang Fan and Shuaicheng Liu},
-      year={2022},
-      eprint={2203.11483},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV}
+@inproceedings{li2022practical,
+  title={Practical stereo matching via cascaded recurrent network with adaptive correlation},
+  author={Li, Jiankun and Wang, Peisen and Xiong, Pengfei and Cai, Tao and Yan, Ziwei and Yang, Lei and Liu, Jiangyu and Fan, Haoqiang and Liu, Shuaicheng},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={16263--16272},
+  year={2022}
 }
 ```
