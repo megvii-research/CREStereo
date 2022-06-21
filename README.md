@@ -6,9 +6,9 @@ This repository contains [MegEngine](https://github.com/MegEngine/MegEngine) imp
 
 > **Practical Stereo Matching via Cascaded Recurrent Network with Adaptive Correlation**\
 > Jiankun Li, Peisen Wang, Pengfei Xiong, Tao Cai, Ziwei Yan, Lei Yang, Jiangyu Liu, Haoqiang Fan, Shuaicheng Liu \
-> CVPR 2022
+> CVPR 2022 **(Oral)**
 
-**[arXiv](https://arxiv.org/abs/2203.11483) | [BibTeX](#citation)** 
+**[Paper](https://openaccess.thecvf.com/content/CVPR2022/papers/Li_Practical_Stereo_Matching_via_Cascaded_Recurrent_Network_With_Adaptive_Correlation_CVPR_2022_paper.pdf)  | [ArXiv](https://arxiv.org/abs/2203.11483) | [BibTeX](#citation)** 
 
 <img src="img/teaser.jpg">
 
