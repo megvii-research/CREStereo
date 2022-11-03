@@ -36,7 +36,7 @@ class AGCL:
         di_y, di_x = dilate[0], dilate[1]
         pady, padx = psize[0] // 2 * di_y, psize[1] // 2 * di_x
 
-        right_pad = F.pad(right_feature, pad_witdth=(
+        right_pad = F.pad(right_feature, pad_width=(
             (0, 0), (0, 0), (pady, pady), (padx, padx)), mode="replicate")
 
         right_slid = F.sliding_window(
