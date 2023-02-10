@@ -1,0 +1,16 @@
+build:
+  gpu: true
+  cuda: "11.2"
+  python_version: 3.8
+  system_packages:
+    - libgl1-mesa-glx
+    - libglib2.0-0
+  python_packages:
+    - numpy==1.21.6
+#    - torch==1.13
+#    - torchvision==0.14
+    - opencv-python==4.6.0.66
+    - MegEngine==1.12.1
+    - Pillow==8.4.0
+    - tensorboardX==2.1
+predict: "predict.py:Predictor"

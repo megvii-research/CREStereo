@@ -10,6 +10,8 @@ This repository contains [MegEngine](https://github.com/MegEngine/MegEngine) imp
 
 **[Paper](https://openaccess.thecvf.com/content/CVPR2022/papers/Li_Practical_Stereo_Matching_via_Cascaded_Recurrent_Network_With_Adaptive_Correlation_CVPR_2022_paper.pdf)  | [ArXiv](https://arxiv.org/abs/2203.11483) | [BibTeX](#citation)** 
 
+<a href="https://replicate.com/arielreplicate/crestereo"><img src="https://replicate.com/arielreplicate/crestereo/badge"></a>  
+
 <img src="img/teaser.jpg">
 
 ## Datasets
